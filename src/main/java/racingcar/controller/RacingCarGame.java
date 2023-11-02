@@ -13,10 +13,10 @@ import static racingcar.util.InputConvertUtils.carNamesToNameList;
 
 public class RacingCarGame {
 
-    private MovingStrategy movingStrategy;
+    private NumberGenerateStrategy numberGenerateStrategy;
 
     public RacingCarGame(GameConfig gameConfig) {
-        this.movingStrategy = gameConfig.getMovingStrategy();
+        this.numberGenerateStrategy = gameConfig.getMovingStrategy();
     }
 
     public void play() {
@@ -45,7 +45,7 @@ public class RacingCarGame {
         OutputView.printStartToShowResult();
 
         for (int i = 0; i < attempt.count(); i++) {
-            cars.tryToMove(movingStrategy);
+            cars.tryToMove(numberGenerateStrategy);
             OutputView.printMovingResults(cars);
         }
     }

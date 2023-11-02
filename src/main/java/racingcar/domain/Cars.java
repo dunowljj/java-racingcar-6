@@ -28,9 +28,9 @@ public class Cars {
         return duplicationRemovedSize != originSize;
     }
 
-    public void tryToMove(MovingStrategy movingStrategy) {
+    public void tryToMove(NumberGenerateStrategy numberGenerateStrategy) {
         cars.stream()
-                .forEach((car) -> car.tryToMove(movingStrategy));
+                .forEach((car) -> car.tryToMove(numberGenerateStrategy));
     }
 
     public List<Car> getCars() {

@@ -1,7 +1,7 @@
 package racingcar.domain;
 
 @FunctionalInterface
-public interface MovingStrategy {
+public interface NumberGenerateStrategy {
 
     int generateValue();
 }

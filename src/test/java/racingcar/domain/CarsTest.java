@@ -118,7 +118,7 @@ public class CarsTest {
         //given
         int repeat = 3;
         Cars cars = new Cars(List.of(name1, name2, name3));
-        RandomMovingStrategy movingStrategy = new RandomMovingStrategy();
+        RandomNumberGenerateStrategy movingStrategy = new RandomNumberGenerateStrategy();
 
         //when
         for (int i = 0; i < repeat; i++) {

@@ -1,16 +1,16 @@
 package racingcar.config;
 
-import racingcar.domain.MovingStrategy;
+import racingcar.domain.NumberGenerateStrategy;
 
 public class GameConfig {
 
-    private MovingStrategy movingStrategy;
+    private NumberGenerateStrategy numberGenerateStrategy;
 
-    public GameConfig(MovingStrategy movingStrategy) {
-        this.movingStrategy = movingStrategy;
+    public GameConfig(NumberGenerateStrategy numberGenerateStrategy) {
+        this.numberGenerateStrategy = numberGenerateStrategy;
     }
 
-    public MovingStrategy getMovingStrategy() {
-        return movingStrategy;
+    public NumberGenerateStrategy getMovingStrategy() {
+        return numberGenerateStrategy;
     }
 }

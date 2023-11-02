@@ -33,13 +33,13 @@ public class Car {
         }
     }
 
-    public void tryToMove(MovingStrategy strategy) {
+    public void tryToMove(NumberGenerateStrategy strategy) {
         if (isMovable(strategy)) {
             move();
         }
     }
 
-    private static boolean isMovable(MovingStrategy strategy) {
+    private static boolean isMovable(NumberGenerateStrategy strategy) {
         return strategy.generateValue() >= STANDARD_MOVING_CAR;
     }
 
