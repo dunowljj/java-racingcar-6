@@ -1,5 +1,6 @@
 package racingcar.domain;
 
+import java.util.HashSet;
 import java.util.List;
 
 public class Cars {
@@ -7,12 +8,12 @@ public class Cars {
     private List<Car> cars;
 
     public Cars(List<String> names) {
-        this.cars = names.stream()
-                .map((name) -> new Car(name.trim()))
-                .distinct()
-                .toList();
-
         validateNameDuplication(names);
+
+        this.cars = names.stream()
+                .distinct()
+                .map((name) -> new Car(name.trim()))
+                .toList();
     }
 
     private void validateNameDuplication(List<String> names) {
@@ -22,7 +23,9 @@ public class Cars {
     }
 
     private boolean isDuplicatedNameExist(List<String> names) {
-        return names.size() != cars.size();
+        int originSize = names.size();
+        int duplicationRemovedSize =  new HashSet<>(names).size();
+        return duplicationRemovedSize != originSize;
     }
 
     public void tryToMove(MovingStrategy movingStrategy) {
